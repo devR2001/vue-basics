@@ -2,8 +2,8 @@ const app = Vue.createApp({
   data() {
     return {
       boxASelected: false,
-      boxASelected: false,
-      boxASelected: false,
+      boxBSelected: false,
+      boxCSelected: false,
     };
   },
   computed: {
