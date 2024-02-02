@@ -6,14 +6,15 @@ const app = Vue.createApp({
       confirmedName: "",
     };
   },
-  methods: {
-    outputFullname() {
+  computed: {
+    fullname() {
       if (this.name === "") {
         return "";
-      } else {
-        return this.name + " " + "Nachname";
       }
+      return this.name + " " + "Nachname";
     },
+  },
+  methods: {
     resetInput() {
       this.name = "";
     },
@@ -33,7 +34,6 @@ const app = Vue.createApp({
       this.name = event.target.value;
     },
   },
-  computed: {},
 });
 
 app.mount("#events");
