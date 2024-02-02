@@ -7,6 +7,13 @@ const app = Vue.createApp({
     };
   },
   methods: {
+    outputFullname() {
+      if (this.name === "") {
+        return "";
+      } else {
+        return this.name + " " + "Nachname";
+      }
+    },
     resetInput() {
       this.name = "";
     },
@@ -22,10 +29,11 @@ const app = Vue.createApp({
     reduceByOne(num) {
       return (this.counter -= num);
     },
-    setName(event, lastName) {
+    setName(event) {
       this.name = event.target.value;
     },
   },
+  computed: {},
 });
 
 app.mount("#events");
