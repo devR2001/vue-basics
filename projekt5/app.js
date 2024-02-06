@@ -2,6 +2,7 @@ const app = Vue.createApp({
   data() {
     return {
       // This is just d bunch of dummy data from the course
+      detailsAreVisible: false,
       friends: [
         {
           id: "manuel",
@@ -23,6 +24,16 @@ const app = Vue.createApp({
         },
       ],
     };
+  },
+  computed: {
+    checkIt() {
+      return this.detailsAreVisible ? "Hide" : "Show";
+    },
+  },
+  methods: {
+    toggleDetails() {
+      this.detailsAreVisible = !this.detailsAreVisible;
+    },
   },
 });
 
