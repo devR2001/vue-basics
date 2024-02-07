@@ -1,12 +1,16 @@
 <template>
   <li>
-    <h2>
-      {{ friend.name }}
-    </h2>
-    <button @click="toggleDetails">Show Details</button>
+    <h2>{{ friend.name }}</h2>
+    <button @click="toggleDetails">{{ detailsAreVisible ? 'Hide' : 'Show' }} Details</button>
     <ul v-if="detailsAreVisible">
-      <li><strong>Phone:</strong>{{ friend.phone }}</li>
-      <li><strong>Email:</strong>{{ friend.email }}</li>
+      <li>
+        <strong>Phone:</strong>
+        {{ friend.phone }}
+      </li>
+      <li>
+        <strong>Email:</strong>
+        {{ friend.email }}
+      </li>
     </ul>
   </li>
 </template>
@@ -19,7 +23,7 @@ export default {
       friend: {
         id: "manuel",
         name: "Manuel Lorenz",
-        phone: "01234 435345 233",
+        phone: "0123 45678 90",
         email: "manuel@localhost.com",
       },
     };
@@ -27,9 +31,7 @@ export default {
   methods: {
     toggleDetails() {
       this.detailsAreVisible = !this.detailsAreVisible;
-    },
-  },
+    }
+  }
 };
 </script>
-
-<style></style>
